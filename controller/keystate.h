@@ -9,14 +9,6 @@ typedef struct {
   bool pressed;
 } key_state_t;
 
-key_state_t new_key_state(uint8_t key) {
-  key_state_t state;
-  state.key = key;
-  state.last_changed = 0;
-  state.pressed = false;
-  return state;
-};
-
 typedef struct {
   key_state_t track_side_l;
   key_state_t track_1;
@@ -29,6 +21,20 @@ typedef struct {
   key_state_t track_6;
   key_state_t track_side_r;
 } key_set_state_t;
+
+key_state_t new_key_state(uint8_t);
+key_set_state_t new_key_set_state();
+INLINE void update_last_changed(key_state_t *, unsigned int);
+INLINE bool is_in_debounce_period(key_state_t *, unsigned long);
+
+
+key_state_t new_key_state(uint8_t key) {
+  key_state_t state;
+  state.key = key;
+  state.last_changed = 0;
+  state.pressed = false;
+  return state;
+};
 
 key_set_state_t new_key_set_state() {
   key_set_state_t set_state;
