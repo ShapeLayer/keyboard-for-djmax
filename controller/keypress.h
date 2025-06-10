@@ -4,6 +4,7 @@
 #include <Keyboard.h>
 
 #include "config.h"
+#include "context.h"
 #include "keystate.h"
 #include "keypress.h"
 #include "utils.h"
@@ -149,6 +150,10 @@ bool process_key_pressed(context_t *context, key_state_t *state, bool is_pressed
   }  if (state->pressed != is_pressed) {
     state->pressed = is_pressed;
     update_last_changed(state, now);
+    
+    // Request display update for key module
+    APPEND_DISPLAY_REQUESTED_MODULE(context, MODULE_ID_KEY);
+    
     Serial.print("Key change - ID: ");
     Serial.print(context_pressed_flag_index);
     Serial.print(", Key: ");

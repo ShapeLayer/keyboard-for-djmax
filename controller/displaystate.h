@@ -21,7 +21,7 @@ display_state_t new_display_state();
 // Implementations
 display_state_t new_display_state() {
   display_state_t state;
-  display_pin_t pin;
+  static display_pin_t pin;  // Make static to prevent destruction
   pin.sda = PIN_DISPLAY_SDA;
   pin.scl = PIN_DISPLAY_SCL;
   state.pin = &pin;
