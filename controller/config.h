@@ -58,7 +58,7 @@
 #define KEYOUT_KNOB_CCW '2'
 
 // Threashold for preventing chattering
-#define DEBOUNCE_DELAY 5  // (ms)
+#define DEBOUNCE_DELAY 20  // (ms)
 
 // Slicing value for last_changed to prevent overflow
 #define LAST_CHANGED_SLICING 4000000000

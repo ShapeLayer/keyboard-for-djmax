@@ -19,6 +19,10 @@ knob_state_t knob_state;
 void init_pins();
 
 void setup() {
+  Serial.begin(9600);
+  delay(1000);  // Give Serial time to initialize
+  Serial.println("Starting DJMAX Controller...");
+  
   context = new_context();
   display_state = new_display_state();
   key_set_state = new_key_set_state();
@@ -27,6 +31,8 @@ void setup() {
   init_display_pins(&display_state);
   init_key_pins();
   init_knob_pins(&knob_state);
+  
+  Serial.println("Controller initialized.");
 }
 
 void loop() {
