@@ -21,24 +21,24 @@
  * TRACK_5 = PIN_TRACK_R & PIN_TRACK_1
  */
 // Key Row in Key Matrix
-#define PIN_TRACK_L 3
-#define PIN_TRACK_R 4
+#define PIN_TRACK_L 2
+#define PIN_TRACK_R 3
 
 // Key Column in Key Matrix
-#define PIN_TRACK_SIDE 5
-#define PIN_TRACK_1 6
-#define PIN_TRACK_2 7
-#define PIN_TRACK_3 8
-#define PIN_TRACK_CENTER 9
+#define PIN_TRACK_SIDE 4
+#define PIN_TRACK_1 5
+#define PIN_TRACK_2 6
+#define PIN_TRACK_3 7
+#define PIN_TRACK_CENTER 8
 
 // Knob Pins
-#define PIN_KNOB_CLK 10
-#define PIN_KNOB_DT 11
-#define PIN_KNOB_SW 12
+#define PIN_KNOB_CLK 9
+#define PIN_KNOB_DT 10
+#define PIN_KNOB_SW 11
 
 // Display Pins
-#define PIN_DISPLAY_SDA 13
-#define PIN_DISPLAY_SCL 14
+#define PIN_DISPLAY_SDA 12
+#define PIN_DISPLAY_SCL 13
 
 /**
  * Keyboard input to connected device

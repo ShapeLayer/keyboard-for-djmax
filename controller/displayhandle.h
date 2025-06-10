@@ -9,9 +9,9 @@
 void make_display_idle(display_state_t *);
 void clear_display(display_state_t *);
 void init_display_pins(display_state_t *);
-void _proc_last_request(display_state_t *, context_t *);
+void _proc_last_request(context_t *, display_state_t *);
 void print_display(display_state_t *, const String &);
-void proc_display_handler(display_state_t *, context_t *);
+void proc_display_handler(context_t *, display_state_t *);
 
 // Implementations
 void make_display_idle(display_state_t *display_state) {
@@ -30,8 +30,8 @@ void clear_display(display_state_t *display_state) {
  * display_state->u8g2 must not be nullptr.
  */
 void _proc_last_request(
-  display_state_t *display_state,
-  context_t *context
+  context_t *context,
+  display_state_t *display_state
 ) {
   String buffer = "";
   // Key
@@ -87,12 +87,12 @@ void print_display(
 }
 
 void proc_display_handler(
-  display_state_t *display_state,
-  context_t *context
+  context_t *context,
+  display_state_t *display_state
 ) {
   if (display_state->u8g2 == nullptr) { return; }
   if (IS_DISPLAY_REQUESTED_MODULE_ANY(context)) {
-    _proc_last_request(display_state, context);
+    _proc_last_request(context, display_state);
   } else {
     if (time_s_diff(
         context->last_event_time,

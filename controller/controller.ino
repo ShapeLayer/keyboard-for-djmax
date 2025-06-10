@@ -40,4 +40,7 @@ void loop() {
   #if KNOB_IS_ENABLED
   proc_knob_handler(&context, &knob_state);
   #endif  // KNOB_IS_ENABLED
+  #if DISPLAY_IS_ENABLED
+  proc_display_handler(&context, &display_state);
+  #endif  // DISPLAY_IS_ENABLED
 }
