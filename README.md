@@ -14,7 +14,7 @@ However, only Arduino Leonardo has been implemented and tested in reality. So it
 - Arduino board supports `Keyboard` library  
 - 10x switches  
     _(If there aren't enough keyboard key switches, you can use push buttons)_
-- 1x rotary encoder (with push button)
+- 1x rotary encoder
 - 1x I2C OLED display module  
     _(I used a 128x32 pixels OLED display. If you use a different size, you may need to adjust the display code.)_
 
